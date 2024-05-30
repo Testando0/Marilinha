@@ -1,0 +1,13 @@
+# Exported from Render on 2024-05-30T17:33:29Z
+services:
+- type: web
+  name: Marilinha
+  runtime: docker
+  repo: https://github.com/Testando0/Marilinha
+  plan: free
+  region: frankfurt
+  dockerCommand: ./start.sh & ./main.sh
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+  autoDeploy: false
+version: "1"
