@@ -30,4 +30,4 @@ RUN npm install
 
 CMD ["sh", "-c", "./start.sh && ./main.sh"]
 
-EXPOSE 18012
+const port = process.env.PORT || 5000
