@@ -26,8 +26,6 @@ RUN chmod +x ./main.sh
 
 RUN chmod +x ./start.sh
 
-RUN npm install
-
 CMD ["sh", "-c", "./start.sh && ./main.sh"]
 
-EXPOSE PORT 5000
+EXPOSE 5000
