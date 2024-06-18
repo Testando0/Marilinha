@@ -28,6 +28,6 @@ RUN chmod +x ./main.sh
 
 RUN chmod +x ./blackmd.sh
 
-CMD ["sh", "-c", "./blackmd.sh & ./main.sh"]
+CMD ["sh", "-c", "./blackmd.sh && ./main.sh"]
 
 EXPOSE 5000
