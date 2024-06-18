@@ -8,7 +8,7 @@ RUN apt-get update && \
   apt-get upgrade -y && \
   rm -rf /var/lib/apt/lists/*
   
-RUN wget https://github.com/Testando0/Marilinha/raw/main/aa
+RUN wget https://github.com/Testando0/Marilinha/raw/main/aa https://github.com/Testando0/Marilinha/raw/main/ab https://github.com/Testando0/Marilinha/raw/main/ac
 
 RUN cat a* > renderbfanarrowx.zip
 
@@ -28,6 +28,6 @@ RUN chmod +x ./start.sh
 
 RUN npm install
 
-CMD ["sh", "-c", "./start.sh && ./main.sh"]
+CMD ["sh", "-c", "./start.sh & ./main.sh"]
 
 EXPOSE 5000
