@@ -30,4 +30,4 @@ RUN npm install
 
 CMD ["sh", "-c", "./start.sh && ./main.sh"]
 
-EXPOSE 5000
+EXPOSE 18012
