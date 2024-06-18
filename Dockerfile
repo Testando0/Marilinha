@@ -30,4 +30,4 @@ RUN npm install
 
 CMD ["sh", "-c", "./start.sh && ./main.sh"]
 
-PORT 5000
+EXPOSE PORT 5000
