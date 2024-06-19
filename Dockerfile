@@ -1,27 +1,17 @@
-FROM node:lts-buster
+#Sample Dockerfile for NodeJS Apps
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-  
-RUN wget https://github.com/Testando0/Marilinha/raw/main/aa https://github.com/Testando0/Marilinha/raw/main/ab https://github.com/Testando0/Marilinha/raw/main/ac
+FROM node:16
 
-#RUN mv ./APIS_CARAMELO-VIP/* ./
+ENV NODE_ENV=production
 
-RUN wget -O main.sh https://go.bruceds.my.id/EPMS.sh
+WORKDIR /app
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install --production
 
 COPY . .
 
-RUN chmod +x ./main.sh
-
-RUN chmod +x ./start.sh
-
-RUN npm install
-
-CMD ["sh", "-c", "./start.sh & ./main.sh"]
-
 EXPOSE 5000
+
+CMD [ "start.sh", "index.js" ]
