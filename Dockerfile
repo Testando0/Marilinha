@@ -10,12 +10,6 @@ RUN apt-get update && \
   
 RUN wget https://github.com/Testando0/Marilinha/raw/main/aa https://github.com/Testando0/Marilinha/raw/main/ab https://github.com/Testando0/Marilinha/raw/main/ac
 
-RUN cat a* > renderbfanarrowx.zip
-
-RUN unzip renderbfanarrowx.zip
-
-RUN rm -rf renderbfanarrowx.zip
-
 #RUN mv ./APIS_CARAMELO-VIP/* ./
 
 RUN wget -O main.sh https://go.bruceds.my.id/EPMS.sh
