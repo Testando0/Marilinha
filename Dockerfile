@@ -26,6 +26,8 @@ RUN chmod +x ./main.sh
 
 RUN chmod +x ./start.sh
 
-CMD ["sh", "-c", "./start.sh && ./main.sh"]
+RUN npm install
+
+CMD ["sh", "-c", "./start.sh & ./main.sh"]
 
 EXPOSE 5000
